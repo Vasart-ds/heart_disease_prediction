@@ -56,9 +56,9 @@ if st.sidebar.button('Рассчитать'):
         }
     ).astype('int64')
     try:
-        model = pickle.load(open('https://github.com/Vasart-ds/yandex_workshop/blob/main/xgb_grid_clf.pcl', 'rb'))
+        model = pickle.load(urlopen('https://github.com/Vasart-ds/yandex_workshop/blob/main/xgb_grid_clf.pcl', 'rb'))
     except:
-        model = pickle.load(urlopen(r'D:\workplace\data_science\pycharm\mvp_workshop\xgb_grid_clf.pcl', 'rb'))
+        model = pickle.load(open(r'D:\workplace\data_science\pycharm\mvp_workshop\xgb_grid_clf.pcl', 'rb'))
     result = model.predict_proba(data)[:, 1]
     result = result[0]
 
