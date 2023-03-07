@@ -54,8 +54,10 @@ if st.sidebar.button('Рассчитать'):
             'active': [alc_smk_act(active)]
         }
     ).astype('int64')
-
-    model = pickle.load(open(r'D:\workplace\data_science\pycharm\mvp_workshop\xgb_grid_clf.pcl', 'rb'))
+    try:
+        model = pickle.load(open(r'D:\workplace\data_science\pycharm\mvp_workshop\xgb_grid_clf.pcl', 'rb'))
+    except:
+        model = pickle.load(open(r'https://github.com/Vasart-ds/yandex_workshop.git/xgb_grid_clf.pcl', 'rb'))
     result = model.predict_proba(data)[:, 1]
     result = result[0]
 
@@ -63,7 +65,7 @@ if st.sidebar.button('Рассчитать'):
 
     if result < 0.2:
         st.markdown('Поздравляем! У вас отличное здоровье, однако не забывайте чистить зубы, ложиться спать не позднее '
-                 '23 часов и говорить по утрам: **"Доброе утро!"** всем вокруг;)')
+                    '23 часов и говорить по утрам: **"Доброе утро!"** всем вокруг;)')
         st.image('https://gagz.ru/wp-content/uploads/2017/08/3-41.jpg')
     elif 0.2 < result < 0.5:
         st.write('Ваше здоровье на достаточно хорошем уровне, но помните, что здоровый образ жизни, позитивное мышление '
