@@ -59,7 +59,7 @@ if st.sidebar.button('Рассчитать'):
         model = pickle.load(open(r'D:\workplace\data_science\pycharm\mvp_workshop\xgb_grid_clf.pcl', 'rb'))
     except:
         #model = pickle.load(open("/xgb_grid_clf.pcl", "rb"))
-        model = load(os.path.dirname(__file__) + '/xgb_grid_clf.pcl')
+        model = load(os.path.dirname(__file__) + './xgb_grid_clf.pcl')
     result = model.predict_proba(data)[:, 1]
     result = result[0]
 
