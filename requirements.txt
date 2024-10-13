@@ -1,6 +1,6 @@
 pip==24.2
 xgboost
-numpy
+numpy==2.1.2
 pandas
 streamlit
 scikit-learn==1.0.0
