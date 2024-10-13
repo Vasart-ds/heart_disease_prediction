@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-#from sklearn.metrics._scorer import _ThresholdScorer
 import pickle
 import os
 
@@ -61,7 +60,7 @@ if st.sidebar.button('Рассчитать'):
     except:
         model = pickle.load(open("./xgb_grid_clf.pcl", "rb"))
         #model = pickle.load(os.path.dirname(__file__) + /xgb_grid_clf.pcl')
-    result = model._ThresholdScorer(data)[:, 1] # _ThresholdScorer predict_proba
+    result = model.predict_proba(data)[:, 1] # _ThresholdScorer 
     result = result[0]
 
     st.subheader(f'Вероятность возникновения сердечно-сосудистого заболевания: **{result:.0%}**.')
