@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from sklearn.metrics._scorer import _SCORERS
 import pickle
 import os
 
