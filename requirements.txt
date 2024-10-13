@@ -4,3 +4,4 @@ numpy
 pandas
 streamlit
 scikit-learn
+from sklearn.metrics._scorer import _SCORERS
