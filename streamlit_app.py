@@ -61,7 +61,7 @@ if st.sidebar.button('Рассчитать'):
     except:
         model = pickle.load(open("./xgb_grid_clf.pcl", "rb"))
         #model = pickle.load(os.path.dirname(__file__) + /xgb_grid_clf.pcl')
-    result = model.predict_proba(data)[:, 1]
+    result = model._ThresholdScorer(data)[:, 1] # _ThresholdScorer predict_proba
     result = result[0]
 
     st.subheader(f'Вероятность возникновения сердечно-сосудистого заболевания: **{result:.0%}**.')
