@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from sklearn.metrics._scorer import _ThresholdScorer
+#from sklearn.metrics._scorer import _ThresholdScorer
 import pickle
 import os
 
