@@ -3,4 +3,4 @@ xgboost
 numpy
 pandas
 streamlit
-scikit-learn
+scikit-learn==1.0.0
